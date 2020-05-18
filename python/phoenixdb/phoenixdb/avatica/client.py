@@ -333,6 +333,11 @@ class AvaticaClient(object):
 
         response_data = self._apply(request)
         response = responses_pb2.OpenConnectionResponse()
+        print("----------------------")
+        print("reconnect")
+        print("----------------------")
+        print(response_data)
+        print("----------------------")
         response.ParseFromString(response_data)
 
     def close_connection(self, connection_id):
