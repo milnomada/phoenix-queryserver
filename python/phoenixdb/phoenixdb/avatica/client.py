@@ -209,6 +209,11 @@ class AvaticaClient(object):
 
         if response.status_code != requests.codes.ok:
             logger.debug("Received response\n%s", response_body)
+            
+            print("----------------------")
+            print(response_body)
+            print("----------------------")
+
             if b'<html>' in response_body:
                 parse_error_page(response_body.decode(response.encoding))
             else:
